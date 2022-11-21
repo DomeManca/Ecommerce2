@@ -70,14 +70,6 @@ namespace Ecommerce
             }
             return null;
         }
-        public void aggiorna()
-        {
-            for (int i = 0; i < 99; i++)
-            {
-                if (carrello1.Visualizza(i) != null)
-                    listBox1.Items.Add(carrello1.Visualizza(i));
-            }
-        }
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -95,6 +87,19 @@ namespace Ecommerce
         {
             carrello1.Svuota();
             aggiorna();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            aggiorna();
+        }
+        public void aggiorna()
+        {
+            listBox1.Items.Clear();
+            for (int i = 0; i < 100; i++)
+            {
+                if (carrello1.Visualizza(i) != null)
+                    listBox1.Items.Add(carrello1.Visualizza(i));
+            }
         }
     }
 }

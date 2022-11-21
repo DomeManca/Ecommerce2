@@ -10,7 +10,7 @@ namespace Ecommerce
     {
         private string _id;
         private Prodotto[] prodotti;
-        private int counter;
+        private int counter = 0;
 
         public Carrello(string id)
         {
@@ -20,7 +20,7 @@ namespace Ecommerce
         public string Id;
         public void Aggiungi(Prodotto p)
         {
-            p = prodotti[counter];
+            prodotti[counter] = p;
             counter++;
         }
         public void Rimuovi(Prodotto p)
@@ -39,7 +39,7 @@ namespace Ecommerce
             {
                 prodotti[pos] = null;
 
-                for (int i = pos; i < counter-1; i++)
+                for (int i = pos; i < 99; i++)
                 {
                     prodotti[i] = prodotti[i+1];
                 }
@@ -56,7 +56,8 @@ namespace Ecommerce
         }
         public void Svuota()
         {
-            for (int i = 0; i < 99; i++)
+            counter = 0;
+            for (int i = 0; i < 100; i++)
             {
                 prodotti[i] = null;
             }
