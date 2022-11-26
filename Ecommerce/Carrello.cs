@@ -9,57 +9,85 @@ namespace Ecommerce
     public class Carrello
     {
         private string _id;
-        private Prodotto[] prodotti;
-        private int counter = 0;
+        private Prodotto[] _prodotti = new Prodotto[100];
+
+        public string Id
+        {
+            get
+            {
+                return _id;
+            }
+            private set
+            {
+                if (value != null)
+                    _id = value;
+                else
+                    throw new Exception("Inserire un id correggiuto");
+            }
+        }
+        public Prodotto getProdotto(int i)
+        {
+            return _prodotti[i];
+        }
 
         public Carrello(string id)
         {
-            Id = id;
-            prodotti = new Prodotto[100];
+            this.Id = id;
+            Svuota();
         }
-        public string Id;
-        public void Aggiungi(Prodotto p)
+        private int getNumProdotti()
         {
-            prodotti[counter] = p;
-            counter++;
-        }
-        public void Rimuovi(Prodotto p)
-        {
-            int pos = -1;
-            for (int i = 0; i < 99; i++)
+            int i = 0;
+            while (i < _prodotti.Length && _prodotti[i] != null)
             {
-                if (prodotti[i] == p)
-                {
-                    pos = i;
-                    break;
-                }
+                i++;
             }
 
+            if (i != _prodotti.Length)
+                return i;
+            else
+                throw new Exception("Il carrello è pieno");
+        }
+        public void Aggiungi(Prodotto p)
+        {
+            if (p != null)
+                _prodotti[getNumProdotti()] = p;
+            else
+                throw new Exception("Inserire un prodotto valido");
+        }
+        public Prodotto Rimuovi(Prodotto p)
+        {
+            int pos = Cerca(p);
             if (pos != -1)
             {
-                prodotti[pos] = null;
+                _prodotti[pos] = null;
 
                 for (int i = pos; i < 99; i++)
                 {
-                    prodotti[i] = prodotti[i+1];
+                    _prodotti[i] = _prodotti[i+1];
                 }
+                return p;
             }   
             else
                 throw new Exception("Prodotto non esistente!");
         }
-        public string Visualizza(int l)
+        public int Cerca(Prodotto p)
         {
-            if(prodotti[l] != null)
-                return prodotti[l].Nome;
-            else
-                return null;
+            int pos = -1;
+            for (int i = 0; i < 99; i++)
+            {
+                if (_prodotti[i] == p)
+                {
+                    pos = i;
+                }
+            }
+            return pos;
         }
         public void Svuota()
         {
-            counter = 0;
             for (int i = 0; i < 100; i++)
             {
-                prodotti[i] = null;
+                _prodotti[i] = null;
             }
         }
     }

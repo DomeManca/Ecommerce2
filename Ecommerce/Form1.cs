@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Ecommerce
 {
@@ -53,9 +54,16 @@ namespace Ecommerce
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string a = Convert.ToString(domainUpDown1.SelectedItem);
-            carrello1.Aggiungi(prod(a));
-            aggiorna();
+            try
+            {
+                string a = Convert.ToString(domainUpDown1.SelectedItem);
+                carrello1.Aggiungi(prod(a));
+                aggiorna();
+            }
+            catch (Exception eccezione)
+            {
+                MessageBox.Show(eccezione.Message);
+            }
         }
         public Prodotto prod(string a)
         {
@@ -85,8 +93,12 @@ namespace Ecommerce
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            carrello1.Svuota();
-            aggiorna();
+            DialogResult dialogResult = MessageBox.Show("Sicuro di voler eliminare?", "Attenzione", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                carrello1.Svuota();
+                aggiorna();
+            }
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -94,11 +106,20 @@ namespace Ecommerce
         }
         public void aggiorna()
         {
-            listBox1.Items.Clear();
+            listView1.Items.Clear();
             for (int i = 0; i < 100; i++)
             {
-                if (carrello1.Visualizza(i) != null)
-                    listBox1.Items.Add(carrello1.Visualizza(i));
+                if (carrello1.Cerca(carrello1.getProdotto(i)) != -1)
+                {
+                    Prodotto p = carrello1.getProdotto(i);
+                    if (p != null)
+                    {
+                        ListViewItem itm;
+                        itm = new ListViewItem(p.TuString());
+                        listView1.Items.Add(itm);
+                    }
+                        
+                }          
             }
         }
     }
