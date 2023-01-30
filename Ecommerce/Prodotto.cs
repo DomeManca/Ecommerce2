@@ -12,10 +12,10 @@ namespace Ecommerce
         private string _id;
         private string _nome;
         private string _produttore;
-        private float _prezzo;
+        private decimal _prezzo;
         private string _descrizione;
 
-        public Prodotto(string id, string nome, string prod, string descr, float prezzo)
+        public Prodotto(string id, string nome, string prod, string descr, decimal prezzo)
         {
             Id = id;
             Nome = nome;
@@ -23,16 +23,16 @@ namespace Ecommerce
             Descrizione = descr;
             Prezzo = prezzo;
         }
-        public Prodotto(string id, string nome, string prod, string descr) : this(id, nome, prod, descr, 10)
+        public Prodotto(string id, string nome, string prod, string descr) : this(id, nome, prod, descr, 1)
         {
         }
-        public Prodotto(string id, string nome, string prod) : this(id, nome, prod, "N/A", 10)
+        public Prodotto(string id, string nome, string prod) : this(id, nome, prod, "N/A", 1)
         {
         }
         public Prodotto() : this("IDVUOTO", "N/A", "N/A", "N/A", 10)
         {
         }
-        public Prodotto(string id, string nome, string prod, float prezzo) : this(id, nome, prod, "N/A", prezzo)
+        public Prodotto(string id, string nome, string prod, decimal prezzo) : this(id, nome, prod, "N/A", prezzo)
         {
         }
         public bool Equals(Prodotto p)
@@ -48,7 +48,7 @@ namespace Ecommerce
             string[] p = {Id, Nome, Produttore, Descrizione, Convert.ToString(Prezzo)};
             return p;
         }
-        public float Prezzo
+        public decimal Prezzo
         {
             get
             {
