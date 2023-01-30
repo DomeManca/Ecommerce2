@@ -14,6 +14,7 @@ namespace Ecommerce
         private string _produttore;
         private decimal _prezzo;
         private string _descrizione;
+        private decimal _scontato;
 
         public Prodotto(string id, string nome, string prod, string descr, decimal prezzo)
         {
@@ -22,6 +23,7 @@ namespace Ecommerce
             Produttore = prod;
             Descrizione = descr;
             Prezzo = prezzo;
+            Scontato = prezzo;
         }
         public Prodotto(string id, string nome, string prod, string descr) : this(id, nome, prod, descr, 1)
         {
@@ -58,6 +60,20 @@ namespace Ecommerce
             {
                 if (value > 0)
                     _prezzo = value;
+                else
+                    throw new Exception("Il prezzo deve essere positivo");
+            }
+        }
+        public decimal Scontato
+        {
+            get
+            {
+                return _scontato;
+            }
+            set
+            {
+                if (value > 0)
+                    _scontato = value;
                 else
                     throw new Exception("Il prezzo deve essere positivo");
             }
@@ -117,6 +133,13 @@ namespace Ecommerce
                 else
                     throw new Exception("Inserire una descrizione valida");
             }
+        }
+        public void ApplyDiscount(decimal discount)
+        {
+            if (discount > 0)
+                Scontato -= Prezzo * (discount / 100);
+            else
+                throw new Exception("Sconto non valido");
         }
     }
 }
