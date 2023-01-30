@@ -45,9 +45,9 @@ namespace Ecommerce
 
             return (this.Id == p.Id);
         }
-        public string[] TuString()
+        public virtual string[] TuString()
         {
-            string[] p = {Id, Nome, Produttore, Descrizione, Convert.ToString(Prezzo)};
+            string[] p = {Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Descrizione };
             return p;
         }
         public decimal Prezzo

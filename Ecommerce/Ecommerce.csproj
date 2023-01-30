@@ -50,12 +50,14 @@
     <Compile Include="Cancelleria.cs" />
     <Compile Include="Carrello.cs" />
     <Compile Include="Elettronico.cs" />
+    <Compile Include="Foglio.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Penna.cs" />
     <Compile Include="Prodotto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -25,7 +25,7 @@ namespace Ecommerce
             }
             private set
             {
-                if (value > DateTime.Today)
+                if (value < DateTime.Today)
                     _scadenza = value;
                 else
                     throw new Exception("Inserire un codice valido");
@@ -48,6 +48,11 @@ namespace Ecommerce
             _ingredienti[7] = h;
             _ingredienti[8] = i;
             _ingredienti[9] = l;
+        }
+        public override string[] TuString()
+        {
+            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Convert.ToString(Scadenza), Descrizione + _ingredienti[0] + _ingredienti[1] + _ingredienti[2] + _ingredienti[3] + _ingredienti[4] + _ingredienti[5] + _ingredienti[6] + _ingredienti[7] + _ingredienti[8] + _ingredienti[9]};
+            return p;
         }
     }
 }

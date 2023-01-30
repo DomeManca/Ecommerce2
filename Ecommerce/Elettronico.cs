@@ -34,5 +34,10 @@ namespace Ecommerce
             if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
                 ApplyDiscount(5);
         }
+        public override string[] TuString()
+        {
+            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato),Codice, Descrizione };
+            return p;
+        }
     }
 }
