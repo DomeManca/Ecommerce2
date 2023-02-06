@@ -115,6 +115,18 @@ namespace Ecommerce
                     tot += _prodotti[i].Scontato;
                 }
             }
+            int c = 0;
+            for (int i = 0; i < 99; i++)
+            {
+                if (_prodotti[i].GetType() == typeof(PElettronico))
+                {
+                    c = 1;
+                }
+            }
+            if (c == 1)
+            {
+                tot -= tot * (5 / 100);
+            }
             return tot;
         }
     }

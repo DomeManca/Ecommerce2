@@ -120,8 +120,8 @@ namespace Ecommerce
                     }     
                 }          
             }
-            label2.Text = Convert.ToString(carrello1.Calctot());
-            label3.Text = Convert.ToString(carrello1.Calctots());
+            label2.Text = Convert.ToString(carrello1.Calctot());//senza sconto
+            label3.Text = Convert.ToString(carrello1.Calctots());//con sconto
         }
     }
 }
