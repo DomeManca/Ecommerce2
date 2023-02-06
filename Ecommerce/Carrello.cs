@@ -52,7 +52,7 @@ namespace Ecommerce
         {
             if (p != null)
             {
-                p.ApplyS();
+                p.ApplicaS();
                 _prodotti[getNumProdotti()] = p;
             }
             else

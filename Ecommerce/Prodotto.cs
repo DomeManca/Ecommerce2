@@ -141,7 +141,7 @@ namespace Ecommerce
             else
                 throw new Exception("Sconto non valido");
         }
-        public virtual void ApplyS()
+        public virtual void ApplicaS()
         {
             Scontato = Prezzo;
         }
