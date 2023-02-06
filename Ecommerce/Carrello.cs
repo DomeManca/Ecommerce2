@@ -93,5 +93,29 @@ namespace Ecommerce
                 _prodotti[i] = null;
             }
         }
+        public decimal Calctot()
+        {
+            decimal tot=0;
+            for (int i = 0; i < 99; i++)
+            {
+                if (_prodotti[i] != null)
+                {
+                    tot += _prodotti[i].Prezzo;
+                }
+            }
+            return tot;
+        }
+        public decimal Calctots()
+        {
+            decimal tot = 0;
+            for (int i = 0; i < 99; i++)
+            {
+                if (_prodotti[i] != null)
+                {
+                    tot += _prodotti[i].Scontato;
+                }
+            }
+            return tot;
+        }
     }
 } 

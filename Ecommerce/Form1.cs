@@ -117,10 +117,11 @@ namespace Ecommerce
                         ListViewItem itm;
                         itm = new ListViewItem(p.TuString());
                         listView1.Items.Add(itm);
-                    }
-                        
+                    }     
                 }          
             }
+            label3.Text = Convert.ToString(carrello1.Calctot());
+            label2.Text = Convert.ToString(carrello1.Calctots());
         }
     }
 }

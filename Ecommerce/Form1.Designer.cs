@@ -40,8 +40,8 @@
             this.Produttore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prezzo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Scontato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Descrizione = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Varie = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Descrizione = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -139,14 +139,14 @@
             // 
             this.Scontato.Text = "Scontato";
             // 
+            // Varie
+            // 
+            this.Varie.Text = "Varie";
+            // 
             // Descrizione
             // 
             this.Descrizione.Text = "Descrizione";
             this.Descrizione.Width = 1520;
-            // 
-            // Varie
-            // 
-            this.Varie.Text = "Varie";
             // 
             // label1
             // 
@@ -160,25 +160,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(680, 344);
+            this.label2.Location = new System.Drawing.Point(428, 344);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(55, 341);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "label3";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(557, 344);
+            this.label4.Location = new System.Drawing.Point(316, 344);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 12;
