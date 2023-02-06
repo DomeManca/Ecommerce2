@@ -25,13 +25,13 @@ namespace Ecommerce
             }
             private set
             {
-                if (value < DateTime.Today)
+                if (value <= DateTime.Today)
                     _scadenza = value;
                 else
                     throw new Exception("Inserire un codice valido");
             }
         }
-        public void ApplicaS()
+        public override void ApplicaS()
         {
             if (DateTime.Today.DayOfWeek - Scadenza.DayOfWeek < 7)
                 ApplyDiscount(50);

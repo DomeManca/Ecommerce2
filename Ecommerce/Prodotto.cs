@@ -47,7 +47,7 @@ namespace Ecommerce
         }
         public virtual string[] TuString()
         {
-            string[] p = {Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Descrizione };
+            string[] p = {Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato),"", Descrizione };
             return p;
         }
         public decimal Prezzo
@@ -140,6 +140,10 @@ namespace Ecommerce
                 Scontato -= Prezzo * (discount / 100);
             else
                 throw new Exception("Sconto non valido");
+        }
+        public virtual void ApplyS()
+        {
+            Scontato = Prezzo;
         }
     }
 }

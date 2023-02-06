@@ -27,5 +27,10 @@ namespace Ecommerce
                     throw new Exception("Grammatura errata");
             }
         }
+        public override string[] TuString()
+        {
+            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Convert.ToString(Grammatura), Descrizione };
+            return p;
+        }
     }
 }

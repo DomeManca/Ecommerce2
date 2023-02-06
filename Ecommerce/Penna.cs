@@ -27,5 +27,10 @@ namespace Ecommerce
                     throw new Exception("Inserire un funzionamento valido");
             }
         }
+        public override string[] TuString()
+        {
+            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Convert.ToString(Funzionamento), Descrizione };
+            return p;
+        }
     }
 }

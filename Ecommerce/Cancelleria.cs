@@ -11,7 +11,7 @@ namespace Ecommerce
         public PCancelleria(string id, string nome, string prod, string descr, decimal prezzo) : base(id, nome, prod, descr, prezzo)
         {
         }
-        public void ApplicaS()
+        public override void ApplicaS()
         {
             if (DateTime.Today.Day % 2 == 0)
                 ApplyDiscount(3);

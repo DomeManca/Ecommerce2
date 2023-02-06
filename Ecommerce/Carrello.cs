@@ -51,7 +51,10 @@ namespace Ecommerce
         public void Aggiungi(Prodotto p)
         {
             if (p != null)
+            {
+                p.ApplyS();
                 _prodotti[getNumProdotti()] = p;
+            }
             else
                 throw new Exception("Inserire un prodotto valido");
         }

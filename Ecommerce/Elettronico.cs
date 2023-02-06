@@ -29,7 +29,7 @@ namespace Ecommerce
                     throw new Exception("Inserire un codice valido");
             }
         }
-        public void ApplicaS()
+        public override void ApplicaS()
         {
             if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
                 ApplyDiscount(5);
