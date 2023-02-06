@@ -136,10 +136,13 @@ namespace Ecommerce
         }
         public void ApplyDiscount(decimal discount)
         {
-            if (discount > 0)
-                Scontato -= Prezzo * (discount / 100);
-            else
-                throw new Exception("Sconto non valido");
+            if (Scontato == Prezzo)
+            {
+                if (discount > 0)
+                    Scontato -= Prezzo * (discount / 100);
+                else
+                    throw new Exception("Sconto non valido");
+            }
         }
         public virtual void ApplicaS()
         {

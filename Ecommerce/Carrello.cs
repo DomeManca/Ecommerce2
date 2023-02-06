@@ -118,9 +118,12 @@ namespace Ecommerce
             int c = 0;
             for (int i = 0; i < 99; i++)
             {
-                if (_prodotti[i].GetType() == typeof(PElettronico))
+                if (_prodotti[i] != null)
                 {
-                    c = 1;
+                    if (_prodotti[i].GetType() == typeof(PElettronico))
+                    {
+                        c = 1;
+                    }
                 }
             }
             if (c == 1)
