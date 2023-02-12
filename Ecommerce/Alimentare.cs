@@ -51,7 +51,7 @@ namespace Ecommerce
         }
         public override string[] TuString()
         {
-            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Convert.ToString(Scadenza), Descrizione + _ingredienti[0] + _ingredienti[1] + _ingredienti[2] + _ingredienti[3] + _ingredienti[4] + _ingredienti[5] + _ingredienti[6] + _ingredienti[7] + _ingredienti[8] + _ingredienti[9]};
+            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), Convert.ToString(Scadenza).Substring(0, 10), Descrizione + _ingredienti[0] + _ingredienti[1] + _ingredienti[2] + _ingredienti[3] + _ingredienti[4] + _ingredienti[5] + _ingredienti[6] + _ingredienti[7] + _ingredienti[8] + _ingredienti[9]};
             return p;
         }
     }
