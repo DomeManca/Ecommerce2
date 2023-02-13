@@ -19,7 +19,6 @@ namespace Ecommerce
             carica();
             domainUpDown1.SelectedItem = Carne.Nome;
         }
-        DateTime date1 = new DateTime(2023, 1, 25);
         Carrello carrello1 = new Carrello("C123");
         PAlimentare Carne = new PAlimentare("P1", "Carne", "Macelleria", "Carne di vacca", 4, DateTime.Today);
         PAlimentare Latte = new PAlimentare("P2", "Latte", "Latteria", "Latte di vacca", 2,DateTime.Today);
@@ -30,7 +29,7 @@ namespace Ecommerce
         PAlimentare Formaggio = new PAlimentare("P7", "Formaggio", "Fomraggificio", "Formaggio di capra", 13, DateTime.Today);
         Prodotto Lego = new Prodotto("P8", "Lego", "LEGO®", "LEGO 60316 City Police Stazione di Polizia, con Elicottero Giocattolo e Camion della Spazzatura, Giochi per Bambini e Bambine dai 6 Anni, Idee Regalo", 60);
         PElettronico Computer = new PElettronico("P9", "Computer", "AKinformatica", "Pc desktop gaming completo Intel i5 11400F 4.4Ghz,Nvidia Ge Force Gtx 1650 Gaming 4gb Ddr5,Ram 16gb Ddr4,Ssd M.2 250gb + Hdd 1Tb Wifi - Windows 11 Pro - TALENT i550F", 1500, "A12345");
-        Prodotto[] lista = new Prodotto[9];
+        List<Prodotto> lista = new List<Prodotto>(9);
         public void carica()
         {
             domainUpDown1.Items.Add(Carne.Nome);
@@ -42,15 +41,15 @@ namespace Ecommerce
             domainUpDown1.Items.Add(Formaggio.Nome);
             domainUpDown1.Items.Add(Lego.Nome);
             domainUpDown1.Items.Add(Computer.Nome);
-            lista[0] = Carne;
-            lista[1] = Latte;
-            lista[2] = Acqua;
-            lista[3] = Pane;
-            lista[4] = Olio;
-            lista[5] = Uova;
-            lista[6] = Formaggio;
-            lista[7] = Lego;
-            lista[8] = Computer;
+            lista.Add(Carne);
+            lista.Add(Latte);
+            lista.Add(Acqua);
+            lista.Add(Pane);
+            lista.Add(Olio);
+            lista.Add(Uova);
+            lista.Add(Formaggio);
+            lista.Add(Lego);
+            lista.Add(Computer);
         }
         private void button1_Click(object sender, EventArgs e)
         {
