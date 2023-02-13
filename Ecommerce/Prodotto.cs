@@ -47,7 +47,7 @@ namespace Ecommerce
         }
         public virtual string[] TuString()
         {
-            string[] p = {Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato),"", Descrizione };
+            string[] p = { Id, Nome, Produttore, Convert.ToString(Prezzo), Convert.ToString(Scontato), "", Descrizione };
             return p;
         }
         public decimal Prezzo

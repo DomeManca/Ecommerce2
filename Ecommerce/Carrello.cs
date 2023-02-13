@@ -9,7 +9,7 @@ namespace Ecommerce
     public class Carrello
     {
         private string _id;
-        private List<Prodotto> _prodotti = new List<Prodotto>(100);
+        private List<Prodotto> _prodotti = new List<Prodotto>();
 
         public string Id
         {
@@ -25,6 +25,18 @@ namespace Ecommerce
                     throw new Exception("Inserire un id correggiuto");
             }
         }
+
+        public List<Prodotto> Prodotti
+        {
+            get
+            {
+                return _prodotti;
+            }
+
+        }
+
+
+
         public Prodotto getProdotto(int i)
         {
             return _prodotti[i];
@@ -64,34 +76,25 @@ namespace Ecommerce
         public decimal Calctot()
         {
             decimal tot=0;
-            for (int i = 0; i < 99; i++)
+            foreach (Prodotto p in this.Prodotti)
             {
-                if (_prodotti[i] != null)
-                {
-                    tot += _prodotti[i].Prezzo;
-                }
+                tot += p.Prezzo;
             }
             return tot;
         }
         public decimal Calctots()
         {
             decimal tot = 0;
-            for (int i = 0; i < 99; i++)
+            foreach (Prodotto p in this.Prodotti)
             {
-                if (_prodotti[i] != null)
-                {
-                    tot += _prodotti[i].Scontato;
-                }
+                tot += p.Scontato;
             }
             int c = 0;
-            for (int i = 0; i < 99; i++)
+            foreach (Prodotto p in this.Prodotti)
             {
-                if (_prodotti[i] != null)
+                if (p.GetType() == typeof(PElettronico))
                 {
-                    if (_prodotti[i].GetType() == typeof(PElettronico))
-                    {
-                        c = 1;
-                    }
+                    c = 1;
                 }
             }
             if (c == 1)
@@ -101,4 +104,4 @@ namespace Ecommerce
             return tot;
         }
     }
-} 
+}

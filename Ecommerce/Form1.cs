@@ -106,19 +106,14 @@ namespace Ecommerce
         public void aggiorna()
         {
             listView1.Items.Clear();
-            for (int i = 0; i < 100; i++)
-            {
-                if (carrello1.Cerca(carrello1.getProdotto(i)) != -1)
-                {
-                    Prodotto p = carrello1.getProdotto(i);
-                    if (p != null)
-                    {
-                        ListViewItem itm;
-                        itm = new ListViewItem(p.TuString());
-                        listView1.Items.Add(itm);
-                    }     
-                }          
+
+
+            foreach(Prodotto p in carrello1.Prodotti) { 
+                ListViewItem itm;
+                itm = new ListViewItem(p.TuString());
+                listView1.Items.Add(itm);
             }
+
             label2.Text = Convert.ToString(carrello1.Calctot());//senza sconto
             label3.Text = Convert.ToString(carrello1.Calctots());//con sconto
         }

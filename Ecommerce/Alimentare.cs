@@ -9,14 +9,13 @@ namespace Ecommerce
     public class PAlimentare : Prodotto
     {
         private DateTime _scadenza;
-        private string[] _ingredienti;
+        private List<string> _ingredienti;
 
         public PAlimentare(string id, string nome, string prod, string descr, decimal prezzo, DateTime scadenza) : base(id, nome, prod, descr, prezzo)
         {
             Scadenza = scadenza;
-            _ingredienti = new string[10];
+            _ingredienti = new List<string>(10);
         }
-
         public DateTime Scadenza
         {
             get
@@ -36,18 +35,9 @@ namespace Ecommerce
             if (DateTime.Today.DayOfWeek - Scadenza.DayOfWeek < 7)
                 ApplyDiscount(50);
         }
-        public void Carica(string a,string b,string c, string d, string e, string f, string g, string h, string i, string l)
+        public void Carica(string a)
         {
-            _ingredienti[0] = a;
-            _ingredienti[1] = b;
-            _ingredienti[2] = c;
-            _ingredienti[3] = d;
-            _ingredienti[4] = e;
-            _ingredienti[5] = f;
-            _ingredienti[6] = g;
-            _ingredienti[7] = h;
-            _ingredienti[8] = i;
-            _ingredienti[9] = l;
+            _ingredienti.Add(a);
         }
         public override string[] TuString()
         {
