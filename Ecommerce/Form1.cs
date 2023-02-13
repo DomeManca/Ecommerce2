@@ -67,11 +67,11 @@ namespace Ecommerce
         public Prodotto prod(string a)
         {
             Prodotto p;
-            for (int i = 0; i < 99; i++)
+            foreach (Prodotto f in lista)
             {
-                if (lista[i].Nome == a)
+                if (f.Nome == a)
                 {
-                    p = lista[i];
+                    p = f;
                     return p;
                 }
             }
@@ -106,8 +106,6 @@ namespace Ecommerce
         public void aggiorna()
         {
             listView1.Items.Clear();
-
-
             foreach(Prodotto p in carrello1.Prodotti) { 
                 ListViewItem itm;
                 itm = new ListViewItem(p.TuString());

@@ -25,18 +25,13 @@ namespace Ecommerce
                     throw new Exception("Inserire un id correggiuto");
             }
         }
-
         public List<Prodotto> Prodotti
         {
             get
             {
                 return _prodotti;
             }
-
         }
-
-
-
         public Prodotto getProdotto(int i)
         {
             return _prodotti[i];
