@@ -22,12 +22,12 @@ namespace Ecommerce
         Carrello carrello1 = new Carrello("C123");
         PAlimentare Carne = new PAlimentare("P1", "Carne", "Macelleria", "Carne di vacca", 4, DateTime.Today);
         PAlimentare Latte = new PAlimentare("P2", "Latte", "Latteria", "Latte di vacca", 2,DateTime.Today);
-        Prodotto Acqua = new Prodotto("P3", "Acqua", "Stabilimento", "Acqua di fonte", 1);
+        PAlimentare Acqua = new PAlimentare("P3", "Acqua", "Stabilimento", "Acqua di fonte", 1, DateTime.Today);
         PAlimentare Pane = new PAlimentare("P4", "Pane", "Panettiere", "Pane arabo,poco nemica di marocco", 5, DateTime.Today);
         PAlimentare Olio = new PAlimentare("P5", "Olio", "Frantoio", "Olio Extra-vergine d'oliva", 6, DateTime.Today);
         PAlimentare Uova = new PAlimentare("P6", "Uova", "Pollaio", "Ouva di gallina ovaiola", 1, DateTime.Today);
         PAlimentare Formaggio = new PAlimentare("P7", "Formaggio", "Fomraggificio", "Formaggio di capra", 13, DateTime.Today);
-        Prodotto Lego = new Prodotto("P8", "Lego", "LEGO®", "LEGO 60316 City Police Stazione di Polizia, con Elicottero Giocattolo e Camion della Spazzatura, Giochi per Bambini e Bambine dai 6 Anni, Idee Regalo", 60);
+        PElettronico Lego = new PElettronico("P8", "Lego", "LEGO®", "LEGO 60316 City Police Stazione di Polizia, con Elicottero Giocattolo e Camion della Spazzatura, Giochi per Bambini e Bambine dai 6 Anni, Idee Regalo", 60, "60316");
         PElettronico Computer = new PElettronico("P9", "Computer", "AKinformatica", "Pc desktop gaming completo Intel i5 11400F 4.4Ghz,Nvidia Ge Force Gtx 1650 Gaming 4gb Ddr5,Ram 16gb Ddr4,Ssd M.2 250gb + Hdd 1Tb Wifi - Windows 11 Pro - TALENT i550F", 1500, "A12345");
         List<Prodotto> lista = new List<Prodotto>(9);
         public void carica()

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce
 {
-    public class Prodotto
+    public abstract class Prodotto
     {
         private string _id;
         private string _nome;
